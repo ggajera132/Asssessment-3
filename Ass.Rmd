@@ -46,6 +46,7 @@ boxplot(ne$Circumf_2004_cm, ne$Circumf_2019_cm, sw$Circumf_2004_cm, sw$Circumf_2
 
 
 # Question 9: Mean growth over 10 years at both the sites
+
 ne$growth <-ne$Circumf_2019_cm-ne$Circum_2009_cm
 head(ne)Bocb
 
