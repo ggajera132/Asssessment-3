@@ -4,7 +4,7 @@ head(m)
 str(m)
 
 
-# Question 6: import the csv file
+#6: import the csv file
 download.file("https://raw.githubusercontent.com/markziemann/SLE712_files/master/bioinfo_asst3_part1_files/growth_data.csv", destfile = "growth_data.csv")
 m <- read.table(growth_data.csv,", header = TRUE, Stringasfactors = FALSE)
 head(m)
@@ -13,7 +13,7 @@ ncol(m)
 colnames(m)
 
 
-# Question 7: Mean and Standard Deviation of tree circumference at the start and end of the study at both sides
+#7: Mean and Standard Deviation of tree circumference at the start and end of the study at both sides
 # Mean and Standard Deviation of the tree at Southwest site
 m<-read.csv(growth_data.csv)
 subset(m,Site=="southwest")
@@ -38,14 +38,14 @@ mean(ne$Circumf_2019_cm)
 sd(ne$Circumf_2004_cm)
 sd(ne$Circumf_2019_cm)
 
-# Question 8: Boxplot of tree circumferences at both sites
+#8: Boxplot of tree circumferences at both sites
 boxplot(ne$Circumf_2004_cm, ne$Circumf_2019_cm)
 boxplot(ne$Circumf_2004_cm, ne$Circumf_2019_cm, sw$Circumf_2004_cm, sw$Circumf_2019_cm)
 boxplot(ne$Circumf_2004_cm, ne$Circumf_2019_cm, sw$Circumf_2004_cm, sw$Circumf_2019_cm, names = c("ne2004", "ne2019", "sw2004", "sw2019"),  mlab="Circumference (cm)")
 boxplot(ne$Circumf_2004_cm, ne$Circumf_2019_cm, sw$Circumf_2004_cm, sw$Circumf_2019_cm, names = c("ne2004", "ne2019", "sw2004", "sw2019"), mlab="Circumference (cm)"), main= "Tree plantation growth at two sites")
 
 
-# Question 9: Mean growth over 10 years at both the sites
+#9: Mean growth over 10 years at both the sites
 
 ne$growth <-ne$Circumf_2019_cm-ne$Circum_2009_cm
 head(ne)Bocb
@@ -54,6 +54,6 @@ sw$growth <-sw$Circumf_2019_cm-sw$Circumf_2009_cm
 head(sw)
 
 
-# Question10: Estimation of p-value to show that the growth over 10 years is different at both the sites using t.test and wilcox.test
+#10: Estimation of p-value to show that the growth over 10 years is different at both the sites using t.test and wilcox.test
 t.test(sw$growth,ne$growth)
 wilcox.test(sw$growth,ne$growth)
